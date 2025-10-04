@@ -1,1 +1,233 @@
+export default function Landing() {
+  return (
+    <main className="min-h-screen bg-gradient-to-b from-white via-sky-50 to-white text-gray-900">
+      {/* NAVBAR */}
+      <nav className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200/60">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-xl bg-sky-600" />
+            <span className="font-bold tracking-tight">AutoNotas EDU</span>
+          </a>
+          <div className="hidden md:flex items-center gap-8 text-sm">
+            <a href="#features" className="hover:text-sky-700">Funcionalidades</a>
+            <a href="#how" className="hover:text-sky-700">Cómo funciona</a>
+            <a href="#pricing" className="hover:text-sky-700">Precios</a>
+            <a href="#faq" className="hover:text-sky-700">FAQ</a>
+          </div>
+          <div className="flex items-center gap-2">
+            <a href="/login" className="hidden sm:inline-block px-4 py-2 rounded-xl border border-slate-200 hover:bg-slate-50">Entrar</a>
+            <a href="/signup" className="inline-block px-4 py-2 rounded-xl bg-sky-600 text-white hover:bg-sky-700">Probar gratis</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <header className="relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+              Convierte <span className="text-sky-600">vídeos y PDFs</span> en
+              <br />
+              <span className="underline decoration-sky-300">resúmenes, glosarios</span> y <span className="underline decoration-amber-300">tests</span>
+              
+            </h1>
+            <p className="mt-5 text-lg text-slate-600 max-w-xl">
+              Sube apuntes o subtítulos y obtén al instante materiales de estudio listos para repasar. Ideal para
+              estudiantes, academias y profesorado.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="/signup" className="px-5 py-3 rounded-xl bg-sky-600 text-white hover:bg-sky-700">Empieza gratis</a>
+              <a href="#demo" className="px-5 py-3 rounded-xl border border-slate-200 hover:bg-slate-50">Ver demo</a>
+            </div>
+            <p className="mt-3 text-xs text-slate-500">
+              Plan gratuito con límites. Sin tarjeta.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="rounded-2xl border border-slate-200 bg-white shadow-lg p-4">
+              <div className="rounded-xl bg-slate-900 text-slate-100 p-4 text-sm font-mono overflow-auto h-72">
+                <div className="opacity-70">$ Subiendo archivo: <span className="text-emerald-300">biologia_clase.pdf</span></div>
+                <div className="mt-2">&gt; Generando resumen…</div>
+                <pre className="mt-3 whitespace-pre-wrap">
+{`# Fotosíntesis
+- Proceso que transforma energía lumínica en química.
+- Reactivos: CO2 + H2O → Productos: glucosa + O2.
+
+# Glosario (extracto)
+• Clorofila — Pigmento que capta la luz.
+• Estroma — Fluido interno del cloroplasto.
+
+# Test (1/10)
+P: ¿Qué molécula capta la luz solar?
+ A) Rubisco  B) Clorofila  C) Glucosa  D) NADPH
+✔ Respuesta: B
+`}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* TRUST / STRIP */}
+      <section className="py-10 border-y border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-sm text-slate-500">
+            Genera contenidos de estudio claros y accionables en segundos.
+          </p>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section id="features" className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold">Todo lo que necesitas para estudiar mejor</h2>
+            <p className="mt-2 text-slate-600">Enfocado en resultados: menos tiempo preparando materiales, más tiempo entendiendo.</p>
+          </div>
+          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Resúmenes por secciones",
+                desc: "Estructuras claras con títulos, bullets y conceptos clave.",
+              },
+              {
+                title: "Glosario automático",
+                desc: "Términos esenciales con definiciones breves y precisas.",
+              },
+              {
+                title: "Tests de práctica",
+                desc: "10 preguntas tipo test por documento, con solución.",
+              },
+              {
+                title: "Sube PDF o subtítulos",
+                desc: "Acepta PDFs de apuntes o .srt/.vtt exportados de tus vídeos.",
+              },
+              {
+                title: "Multilenguaje",
+                desc: "Funciona en español e inglés desde el día uno.",
+              },
+              {
+                title: "Privacidad primero",
+                desc: "Tus archivos no se usan para reentrenar modelos. Puedes borrarlos cuando quieras.",
+              },
+            ].map((f, i) => (
+              <div key={i} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h3 className="font-semibold">{f.title}</h3>
+                <p className="text-sm text-slate-600 mt-1">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section id="how" className="py-20 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold">Cómo funciona</h2>
+            <p className="mt-2 text-slate-600">En tres pasos sencillos:</p>
+          </div>
+          <ol className="mt-8 grid md:grid-cols-3 gap-6">
+            {[
+              {
+                step: "1",
+                title: "Sube tu material",
+                desc: "PDF de apuntes o subtítulos del vídeo (.srt/.vtt).",
+              },
+              {
+                step: "2",
+                title: "Procesamos con IA",
+                desc: "Extraemos texto y generamos resumen, glosario y test.",
+              },
+              {
+                step: "3",
+                title: "Estudia y comparte",
+                desc: "Descarga en PDF/CSV o comparte con tu clase.",
+              },
+            ].map((s, i) => (
+              <li key={i} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="text-sky-600 font-bold">Paso {s.step}</div>
+                <h3 className="mt-2 font-semibold">{s.title}</h3>
+                <p className="text-sm text-slate-600 mt-1">{s.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* DEMO CTA */}
+      <section id="demo" className="py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold">Prueba la demo pública</h2>
+          <p className="mt-2 text-slate-600">Sube un archivo de muestra y mira cómo genera materiales de estudio en segundos.</p>
+          <a href="/signup" className="inline-block mt-6 px-6 py-3 rounded-xl bg-sky-600 text-white hover:bg-sky-700">Probar gratis</a>
+          <p className="text-xs text-slate-500 mt-2">Sin tarjeta · Límite de 3 documentos</p>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="py-20 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center">Precios simples</h2>
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
+            {[{
+              name:"Gratis", price:"0€", desc:"Para probar y tareas puntuales", features:["3 documentos/mes","Resúmenes y glosario","Exportación básica"]
+            },{
+              name:"Estudiante", price:"9€/mes", desc:"Para estudiar cada semana", features:["50 documentos/mes","Tests ilimitados","Historial y favoritos"]
+            },{
+              name:"Academia", price:"49€/mes", desc:"Para grupos y clases", features:["500 documentos/mes","Carpetas compartidas","Soporte prioritario"]
+            }].map((p, i)=> (
+              <div key={i} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col">
+                <h3 className="font-semibold">{p.name}</h3>
+                <div className="text-3xl font-bold mt-2">{p.price}<span className="text-base font-normal text-slate-500"> /mes</span></div>
+                <p className="text-sm text-slate-600 mt-1">{p.desc}</p>
+                <ul className="text-sm mt-4 space-y-2">
+                  {p.features.map((f,j)=> <li key={j}>• {f}</li>)}
+                </ul>
+                <a href="/signup" className="mt-6 inline-block px-4 py-2 rounded-xl bg-sky-600 text-white text-center hover:bg-sky-700">Empezar</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold">Preguntas frecuentes</h2>
+          <div className="mt-8 space-y-4">
+            {[{
+              q:"¿Necesito tarjeta para el plan Gratis?",
+              a:"No. Puedes crear una cuenta y usar el plan gratuito sin tarjeta."},
+              {q:"¿Mis archivos son privados?", a:"Sí. No se usan para reentrenar modelos y puedes borrarlos en cualquier momento."},
+              {q:"¿Aceptáis vídeos?", a:"En el MVP usamos subtítulos .srt/.vtt. En la siguiente versión añadimos transcripción automática de .mp4."}
+            ].map((f,i)=> (
+              <details key={i} className="rounded-xl border border-slate-200 bg-white p-4 open:shadow-sm">
+                <summary className="cursor-pointer font-medium">{f.q}</summary>
+                <p className="text-sm text-slate-600 mt-2">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-10 border-t border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded-lg bg-sky-600" />
+            <span>AutoNotas EDU</span>
+          </div>
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-sky-700">Términos</a>
+            <a href="#" className="hover:text-sky-700">Privacidad</a>
+            <a href="mailto:hola@autonotas.edu" className="hover:text-sky-700">Contacto</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  )
+}
 
